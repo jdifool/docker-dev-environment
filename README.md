@@ -4,8 +4,8 @@
 
 1. run nginx-proxy container
 
-ˋˋˋ
+
 cd nginx-proxy
 docker compose up -d
-ˋˋˋ
+
 
