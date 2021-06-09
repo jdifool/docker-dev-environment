@@ -5,7 +5,7 @@
 1. run nginx-proxy container
 
 
+```
 cd nginx-proxy
 docker compose up -d
-
-
+```
