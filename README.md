@@ -15,7 +15,7 @@ cd nginx-proxy
 docker compose up -d
 ```
 
-This starts an automated nginx reverse proxy that forwards http(s) requests to your proxied docker containers. 
+This starts an [automated nginx reverse proxy](https://hub.docker.com/r/jwilder/nginx-proxy) that routes http(s) requests to your proxied docker containers. 
 For this to happen, you need to 
 - add the domain, you want to be proxied, to your hosts etc/hosts file.
 - add the environment variable VIRTUAL_HOST in your containers docker-compose.yml file.
