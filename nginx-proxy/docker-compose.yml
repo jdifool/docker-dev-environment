@@ -6,7 +6,6 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./conf/nginx/proxy.conf:/etc/nginx/proxy.conf
       - /var/run/docker.sock:/tmp/docker.sock:ro
 networks:
   default:
