@@ -6,11 +6,17 @@ services:
     # General purpose PHP image 
     # (Note: This image is based on https://hub.docker.com/r/thecodingmachine/php)
     image: johndifool/php:7.2-v4-apache-public
+    # Activate portmapping for standalone usage, i.e. without nginx proxy
+    #ports:
+    #  - "80:80"
+    #  - "443:443"
     volumes:
       - ./conf/apache/my-apache.conf:/etc/apache2/conf-enabled/my-apache.conf
       - ./src:/var/www/html
     networks:
+      # allow communication with nginx proxy
       - dev
+      # internal network to allow communication between services of this container
       - default
     environment:
       # The host your app is accessible at.
@@ -36,7 +42,9 @@ services:
     volumes:
       - ./db:/var/lib/mysql  
     networks:
+      # internal network to allow communication between services of this container
       - default
 networks:
+  # allow communication with nginx proxy
   dev:
     external: true
