@@ -22,7 +22,8 @@ services:
     image: mysql:5.7
     ports: 
       # Exposes port 3306 with a 33306 on the host port. 
-      # (Note by doing this you are responsible for managing port collisions`.)
+      # (Note: By doing this you are responsible for managing port collisions.
+      #        Meaning, choose a unique port for every database service across all projects.)
       - "33306:3306"
     command:
       - --character-set-server=utf8
