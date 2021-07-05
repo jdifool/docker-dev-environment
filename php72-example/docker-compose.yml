@@ -40,6 +40,9 @@ services:
       - "MYSQL_DATABASE=${MYSQL_DATABASE:-db_app}"
       - "MYSQL_RANDOM_ROOT_PASSWORD=yes"
     volumes:
+      # Initializing container with this data, when started for the first time.
+      #- ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      # This is, where your database data goes.
       - ./db:/var/lib/mysql  
     networks:
       # internal network to allow communication between services of this container
